@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 
     [field: Header("References")]
     [field: SerializeField] public PlayerSO Data { get; private set; }
-
+    [field: SerializeField] public Weapon Weapon { get; private set; }
     public Rigidbody Rigidbody { get; private set; }
     public Animator Animator { get; private set; }
     public PlayerInput Input { get; private set; }
@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         stateMachine.ChangeState(stateMachine.IdleState);
+
+        CharacterHealth.OnDie += OnDie;
     }
 
     private void Update()

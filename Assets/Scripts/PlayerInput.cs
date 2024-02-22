@@ -21,5 +21,5 @@ public class PlayerInput : MonoBehaviour
     private void OnDisable()
     {
         InputActions.Disable();
-    }
+    } 
 }

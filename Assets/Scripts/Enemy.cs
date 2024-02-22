@@ -36,8 +36,6 @@ public class Enemy : MonoBehaviour
     {
         stateMachine.ChangeState(stateMachine.IdlingState);
         CharacterHealth.OnDie += OnDie;
-
-
     }
 
     private void Update()

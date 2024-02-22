@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [field: Header("References")]
-    [field: SerializeField] public EnemySO Data { get; private set; }
-
     [field: Header("Animations")]
     [field: SerializeField] public PlayerAnimationData AnimationData { get; private set; }
-    [field: SerializeField] public Weapon Weapon { get; private set; }
-    public CharacterHealth CharacterHealth { get; private set; }
 
+    [field: Header("References")]
+    [field: SerializeField] public EnemySO Data { get; private set; }
+    [field: SerializeField] public Weapon Weapon { get; private set; }
     public Rigidbody Rigidbody { get; private set; }
     public Animator Animator { get; private set; }
     public ForceReceiver ForceReceiver { get; private set; }
     public CharacterController Controller { get; private set; }
-
+    public CharacterHealth CharacterHealth { get; private set; }
     private EnemyStateMachine stateMachine;
 
     void Awake()
@@ -54,5 +52,4 @@ public class Enemy : MonoBehaviour
         Animator.SetTrigger("Die");
         enabled = false;
     }
-
 }

@@ -24,6 +24,7 @@ public class Weapon : MonoBehaviour
 
         if (other.TryGetComponent(out CharacterHealth health))
         {
+            Debug.Log(gameObject.name + "가 " + other.name + "에게 " + damage + "의 피해를 입힘.");
             health.TakeDamage(damage);
         }
 

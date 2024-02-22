@@ -55,13 +55,13 @@ public class PlayerComboAttackState : PlayerAttackState
 
         stateMachine.Player.ForceReceiver.AddForce(stateMachine.Player.transform.forward * attackInfoData.Force);
     }
-
     public override void Update()
     {
         base.Update();
 
         ForceMove();
-
+        //stateMachine.Player.Weapon.SetAttack(attackInfoData.Damage, attackInfoData.Force);
+        //stateMachine.Player.Weapon.gameObject.SetActive(true);
         float normalizedTime = GetNormalizedTime(stateMachine.Player.Animator, "Attack");
         if (normalizedTime < 1f)
         {
@@ -70,6 +70,8 @@ public class PlayerComboAttackState : PlayerAttackState
 
             if (normalizedTime >= attackInfoData.ComboTransitionTime)
                 TryComboAttack();
+            stateMachine.Player.Weapon.SetAttack(attackInfoData.Damage, attackInfoData.Force);
+            stateMachine.Player.Weapon.gameObject.SetActive(true);
         }
         else
         {
@@ -82,6 +84,7 @@ public class PlayerComboAttackState : PlayerAttackState
             {
                 stateMachine.ChangeState(stateMachine.IdleState);
             }
+            stateMachine.Player.Weapon.gameObject.SetActive(false);
         }
     }
 }

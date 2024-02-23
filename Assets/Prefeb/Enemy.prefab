@@ -126,7 +126,7 @@ Transform:
   m_GameObject: {fileID: 4466555313112405539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.26, y: 0, z: 29.17}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -146,8 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83eaf8933fe796b468e12d97ab12b3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 1bc112dc9b230eb4494f5c8b12b2b807,
-    type: 2}
   <AnimationData>k__BackingField:
     groundParameterName: '@Ground'
     idleParameterName: Idle
@@ -159,6 +157,8 @@ MonoBehaviour:
     attackParameterName: '@Attack'
     comboAttackParameterName: ComboAttack
     baseAttackParameterName: BaseAttack
+  <Data>k__BackingField: {fileID: 11400000, guid: 1bc112dc9b230eb4494f5c8b12b2b807,
+    type: 2}
   <Weapon>k__BackingField: {fileID: 4900457201865418632}
 --- !u!143 &6405233605675269509
 CharacterController:

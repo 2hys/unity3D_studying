@@ -22,7 +22,10 @@ public class CharacterHealth : MonoBehaviour
         health = Mathf.Max(health - damage, 0);
 
         if (health == 0)
+        {
             OnDie?.Invoke();
+            Destroy(gameObject, 10f);
+        }
 
         Debug.Log(health);
     }
